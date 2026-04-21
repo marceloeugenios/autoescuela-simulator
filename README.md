@@ -20,7 +20,7 @@ A **Progressive Web App (PWA)** for practising the A1/A2 motorcycle driving theo
 
 | File | Contents |
 |------|----------|
-| `questions/questions.json` | 1 432 questions — text, explanation, answers with correct flag, image path, test memberships |
+| `questions/questions.json` | 680 questions — sourced from the 34 official tests, correct answers verified server-side |
 | `questions/tests.json` | 34 tests — each with its ordered list of 20 question IDs |
 | `pictures/` | 848 question images (JPEG) |
 
@@ -80,7 +80,7 @@ npm run preview  # Preview the production build locally
 | `/#/test/:testId` | Test | One question at a time; optional image; answer options; immediate correct/incorrect feedback + explanation; progress bar; timer. `testId` can be a `cditest` number, `retry`, or `image-test` |
 | `/#/result` | Result | Pass/fail (≤ 2 mistakes), score, time taken; mistakes log with explanations; retry same test |
 | `/#/retry` | Retry Queue | List of incorrectly-answered questions; launch as custom test; remove individual entries or clear all |
-| `/#/questions` | Question Bank | All 1 432 questions with live filters: keyword (text + explanation + `#id`), test group (code only), image presence, retry-queue; expandable cards showing `#id`, answers + explanation |
+| `/#/questions` | Question Bank | All 680 questions with live filters: keyword (text + explanation + `#id`), test group (code only), image presence, retry-queue; expandable cards showing `#id`, answers + explanation |
 | `/#/images` | Images | 3–4 column grid of all 848 question images (48 per page); tap → modal (tap image to close) showing `#id`, question, correct answer highlighted, explanation, test link. "Select for test" mode lets you pick images and launch an ad-hoc test |
 
 ---
@@ -256,10 +256,9 @@ This re-fetches only the affected questions using a no-threshold matching strate
 ]
 ```
 
-- **1 432 total questions** — all have at least one `correct: true` answer
-- **`tests` field**: list of tests this question belongs to — empty `[]` for bank-only questions
-- 752 questions have `tests: []` (outside the 34 official tests)
-- Questions have 2 answers (109) or 3 answers (1 323)
+- **680 total questions** — sourced exclusively from the 34 official tests; all correct answers verified against the server's authoritative answer key (`obtener_CTA_num_fallos.php`)
+- **`tests` field**: always non-empty; every question belongs to at least one test
+- Questions have 2 or 3 answers
 
 ### `questions/tests.json`
 

@@ -138,9 +138,9 @@ auto-escola-simulator/
 
 - `questions.json` image paths include the `pictures/` prefix (e.g. `pictures/9469_graf_873mod.jpg`) — rendered as `/${q.image}`
 - Each image maps to exactly one question (848 unique images, 848 questions with images)
-- All 1 432 questions have at least one correct answer (186 were fixed via `fix_missing_correct.py`)
-- 752 questions have `tests: []` (bank questions outside the 34 official tests)
-- Questions have 2 answers (109) or 3 answers (1 323)
+- **680 questions** — sourced exclusively from the 34 official tests; bank questions (unverifiable correct answers) removed
+- All correct answers verified against the server's authoritative key via `obtener_CTA_num_fallos.php`
+- Questions have 2 or 3 answers
 
 ---
 
