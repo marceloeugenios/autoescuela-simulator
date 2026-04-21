@@ -34,7 +34,7 @@ export default defineConfig({
           },
           {
             urlPattern: /^\/questions\/.*/,
-            handler: 'CacheFirst',
+            handler: 'NetworkFirst',
             options: { cacheName: 'questions-cache' },
           },
         ],
