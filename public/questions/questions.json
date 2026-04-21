@@ -185,7 +185,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -207,7 +207,7 @@
     "answers": [
       {
         "text": "Sí, si lleva encendido, al menos, el alumbrado de posición y cruce.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, si lo hace a una velocidad que se adapte a las circunstancias de iluminación.",
@@ -371,7 +371,7 @@
       },
       {
         "text": "No, no es obligatorio apagarla, aunque sí recomendable.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -519,7 +519,7 @@
     "answers": [
       {
         "text": "más pequeños de su tamaño real, pareciendo que circulan muy alejados de la motocicleta.<br />",
-        "correct": false
+        "correct": true
       },
       {
         "text": "más grandes de su tamaño real, pareciendo que se encuentran muy próximos a la motocicleta.",
@@ -701,7 +701,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -883,7 +883,7 @@
       },
       {
         "text": "Es igual de eficaz y seguro para los dos ocupantes.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Para el ocupante, ya que va sentado detrás.",
@@ -1035,7 +1035,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -1087,7 +1087,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -1299,7 +1299,7 @@
       },
       {
         "text": "No, este permiso no le autoriza a conducir este tipo de motocicletas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -1351,7 +1351,7 @@
       },
       {
         "text": "Sí, adaptando la velocidad a las circunstancias de visibilidad.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, está prohibido.",
@@ -1373,7 +1373,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -1959,7 +1959,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -2631,7 +2631,7 @@
       },
       {
         "text": "No, porque puede producir somnolencia.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -3165,7 +3165,7 @@
     "answers": [
       {
         "text": "Sí, sobre todo si algún motorista conduce de manera competitiva.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, solamente si el grupo es numeroso, es decir, más de 6 ó 7 motoristas.",
@@ -3225,7 +3225,7 @@
       },
       {
         "text": "Solamente en el caso de que el pasajero tenga un peso excesivo",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -3243,7 +3243,7 @@
     "answers": [
       {
         "text": "Sí, siempre que conecte la señal de emergencia.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, está prohibido.",
@@ -3373,7 +3373,7 @@
     "answers": [
       {
         "text": "Sí, tanto delante como detrás, aunque su instalación es opcional.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, está prohibido.",
@@ -3503,7 +3503,7 @@
       },
       {
         "text": "Sólo si estaciona en una zona de carga y descarga.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -3733,7 +3733,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -3833,7 +3833,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -3959,7 +3959,7 @@
     "answers": [
       {
         "text": "No, no es obligatorio.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, y un par de triángulos homologados de preseñalización de peligro.",
@@ -4037,7 +4037,7 @@
     "answers": [
       {
         "text": "Pasar, porque la silueta del ciclo da vía libre a los vehículos de dos ruedas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Detenerme, hasta que el semáforo principal cambie a verde.",
@@ -4089,7 +4089,7 @@
     "answers": [
       {
         "text": "No, está prohibido.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, pero sólo en vías interurbanas.",
@@ -4305,7 +4305,7 @@
       },
       {
         "text": "Sí, deberá llevar dos ruedas de repuesto, una para cada rueda.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -4787,7 +4787,7 @@
     "answers": [
       {
         "text": "Sí, si es para subir o bajar a algún pasajero.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, si no molesta y es por tiempo inferior a dos minutos.",
@@ -4873,7 +4873,7 @@
       },
       {
         "text": "El 50%, al igual que la rueda trasera.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -4891,7 +4891,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -4921,7 +4921,7 @@
       },
       {
         "text": "No, este tipo de alumbrado está prohibido en las motocicletas.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -4939,7 +4939,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -5391,7 +5391,7 @@
     "answers": [
       {
         "text": "1 metro, como mínimo.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Un margen de seguridad proporcional a la velocidad y a la anchura y características de la calzada.",
@@ -5443,7 +5443,7 @@
     "answers": [
       {
         "text": "Reducir la velocidad, llegando a detenerme si fuera preciso.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Encender las luces de carretera.",
@@ -5581,7 +5581,7 @@
       },
       {
         "text": "sean bajas, debiendo ser reforzada la bota del pie derecho para accionar con eficacia el embrague.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -5677,7 +5677,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -5933,7 +5933,7 @@
     "answers": [
       {
         "text": "Sustituir las zapatas si se encuentran desgastadas y limpiarlas si fuera preciso.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sustituir las pastillas si se encuentran desgastadas.",
@@ -5959,7 +5959,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -6007,7 +6007,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -6059,7 +6059,7 @@
       },
       {
         "text": "La luz de posición y la de carretera si no existe riesgo de producir deslumbramientos.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "La luz de posición y la de cruce.",
@@ -6107,7 +6107,7 @@
     "answers": [
       {
         "text": "No, el aquaplaning sólo ocurre en los turismos.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, especialmente a altas velocidades.",
@@ -6471,7 +6471,7 @@
       },
       {
         "text": "No, se debe dejar encendida la luz de posición.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -6493,7 +6493,7 @@
     "answers": [
       {
         "text": "puede afectar al consumo de carburante.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "influirá sobre la presión de engrase del motor.",
@@ -6519,7 +6519,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, pero únicamente si circulan vehículos en sentido contrario que impidan adelantar por la izquierda.",
@@ -6571,7 +6571,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -6805,7 +6805,7 @@
       },
       {
         "text": "No, sólo están obligados los conductores de turismos.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -7001,7 +7001,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -7643,7 +7643,7 @@
     "answers": [
       {
         "text": "La luz de carretera obligatoriamente.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "La luz de cruce, obligatoriamente.",
@@ -7747,7 +7747,7 @@
     "answers": [
       {
         "text": "Uno.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Tres.",
@@ -7773,7 +7773,7 @@
     "answers": [
       {
         "text": "100 kilómetros por hora, porque es una vía interurbana.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "50 kilómetros por hora.",
@@ -7903,7 +7903,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -8323,7 +8323,7 @@
       },
       {
         "text": "se deberá solicitar una nueva inspección obligatoriamente en otra estación ITV.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -8393,7 +8393,7 @@
     "answers": [
       {
         "text": "Pasar.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Detenerme obligatoriamente.",
@@ -8493,7 +8493,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -8805,7 +8805,7 @@
       },
       {
         "text": "Sí, porque con algunas infracciones también se puede perder parte de puntos asignados.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, siempre.",
@@ -9317,7 +9317,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -9529,7 +9529,7 @@
       },
       {
         "text": "No, porque circula por poblado y no es necesario llevar la luz de cruce encendida durante el día.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -9547,7 +9547,7 @@
     "answers": [
       {
         "text": "120 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "80 km/h.",
@@ -9751,7 +9751,7 @@
     "answers": [
       {
         "text": "A 120 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "A 90 km/h.",
@@ -9829,7 +9829,7 @@
     "answers": [
       {
         "text": "A 50 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "A 45 km/h.",
@@ -9907,7 +9907,7 @@
     "answers": [
       {
         "text": "Un espacio no inferior a 1,50 metros.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "1 metro, como máximo.",
@@ -10943,7 +10943,7 @@
       },
       {
         "text": "La que crea conveniente, porque al no ser un vehículo no hay distancia de separación establecida.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -11017,7 +11017,7 @@
       },
       {
         "text": "Detenerme porque así nos indica la luz roja del semáforo de la izquierda.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Ceder el paso sin llegar a detenerme.",
@@ -11611,7 +11611,7 @@
       },
       {
         "text": "está prohibido sobrepasar la velocidad indicada.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "termina la prohibición de circular a una velocidad superior a la indicada.",
@@ -12483,7 +12483,7 @@
       },
       {
         "text": "Sí, pero solo después de tener una experiencia mínima de dos años con el permiso de la clase B.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, siempre.",
@@ -12557,7 +12557,7 @@
     "answers": [
       {
         "text": "Sí, a partir de los 100.000 kilómetros.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, este requisito solo afecta a los turismos, los camiones y los autobuses.",
@@ -12995,7 +12995,7 @@
     "answers": [
       {
         "text": "Blancas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Amarillas.",
@@ -13155,7 +13155,7 @@
       },
       {
         "text": "Sí, pero solamente cuando el arcén esté pavimentado.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, porque el arcén es transitable y tiene anchura suficiente.",
@@ -13177,7 +13177,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, son más seguros los lisos.",
@@ -13637,7 +13637,7 @@
     "answers": [
       {
         "text": "es muy segura si la motocicleta que encabeza el grupo es la más potente y su conductor poco experto.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "permitirá la circulación en paralelo entre las motocicletas siempre y cuando la separación lateral entre las mismas sea mayor de 1.50 metros.",
@@ -13663,7 +13663,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -13967,7 +13967,7 @@
     "answers": [
       {
         "text": "Sí, pero sólo por tiempo inferior a dos minutos.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, en ningún caso.",
@@ -14219,7 +14219,7 @@
     "answers": [
       {
         "text": "Telefonear al 112.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Buscar rápidamente el poste SOS más cercano.",
@@ -14345,7 +14345,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -14397,7 +14397,7 @@
       },
       {
         "text": "Inmediatamente después de consumirlo y sus efectos alcanzan el punto máximo una hora después de haber bebido la última copa.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "A la hora de haber tomado la última copa.",
@@ -14575,7 +14575,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -14675,7 +14675,7 @@
     "answers": [
       {
         "text": "No, si se adopta una postura aerodinámica.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, sólo depende de la cilindrada de la motocicleta.",
@@ -14701,7 +14701,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -14857,7 +14857,7 @@
       },
       {
         "text": "Ofrecen mejor ventilación y transpiración.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No se deterioran con los rayos del sol.",
@@ -15355,7 +15355,7 @@
       },
       {
         "text": "Sí, además de dos bujías de repuesto y un juego de platinos.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -15655,7 +15655,7 @@
     "answers": [
       {
         "text": "solo cuando se circula por poblado.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "solo cuando se circula fuera de poblado.",
@@ -15871,7 +15871,7 @@
       },
       {
         "text": "Sí, entre otras lesiones puede producirse fractura de cráneo y lesiones a nivel cerebral.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": [
@@ -16669,7 +16669,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, pero solo en motocicletas poco potentes y pesadas.",
@@ -16695,7 +16695,7 @@
     "answers": [
       {
         "text": "50 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "45 km/h.",
@@ -16877,7 +16877,7 @@
     "answers": [
       {
         "text": "30 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "45 km/h.",
@@ -17744,7 +17744,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -18160,7 +18160,7 @@
     "answers": [
       {
         "text": "No, porque está prohibido.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, en 20 kilómetros por hora.",
@@ -18206,7 +18206,7 @@
       },
       {
         "text": "No, porque está prohibido estacionar en este lugar.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, porque es una vía con poco tráfico.",
@@ -18345,7 +18345,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -18362,7 +18362,7 @@
     "answers": [
       {
         "text": "A 60 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "A 50 km/h.",
@@ -18610,7 +18610,7 @@
     "answers": [
       {
         "text": "45 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "40 km/h.",
@@ -18631,7 +18631,7 @@
     "answers": [
       {
         "text": "No, porque ya he hecho el Stop.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, si desde ese lugar tenga visibilidad.",
@@ -18677,7 +18677,7 @@
       },
       {
         "text": "Sí, porque en las glorietas siempre tienen preferencia los vehículos de motor.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, y además debe detenerse.",
@@ -18799,7 +18799,7 @@
     "answers": [
       {
         "text": "No, sólo pueden pasar las bicicletas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, porque no está prohibido.",
@@ -18845,7 +18845,7 @@
       },
       {
         "text": "No, porque su estructura puede estar dañada sin que se note externamente.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Dependerá del material de fabricación.",
@@ -18883,7 +18883,7 @@
     "answers": [
       {
         "text": "No, sólo se deben utilizar de noche.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, pero únicamente las de posición.",
@@ -19072,7 +19072,7 @@
     "answers": [
       {
         "text": "Una vez al año.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Una o dos veces al mes.",
@@ -19093,7 +19093,7 @@
     "answers": [
       {
         "text": "agresivo.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "inexperto.",
@@ -19143,7 +19143,7 @@
       },
       {
         "text": "No, porque la bicicleta no es un vehículo de motor.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": []
@@ -19177,7 +19177,7 @@
     "answers": [
       {
         "text": "ciclos y motocicletas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "cualquier vehículo de dos ruedas.",
@@ -19370,7 +19370,7 @@
       },
       {
         "text": "No, porque está prohibido circular por autopistas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, pero únicamente durante el día.",
@@ -19408,7 +19408,7 @@
     "answers": [
       {
         "text": "Prohíbe adelantar.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Prohíbe circular en paralelo.",
@@ -19433,7 +19433,7 @@
       },
       {
         "text": "Sí, pero sólo en invierno, para protegerse del frío.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No porque dificulta el manejo de los mandos del manillar.",
@@ -19450,7 +19450,7 @@
     "answers": [
       {
         "text": "Todos los que estén autorizados.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Ninguno.",
@@ -19534,7 +19534,7 @@
     "answers": [
       {
         "text": "matricularlo únicamente.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "asegurarlo solamente.",
@@ -19555,7 +19555,7 @@
     "answers": [
       {
         "text": "Girar a la derecha o a la izquierda.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Cambiar el sentido de la marcha.",
@@ -19828,7 +19828,7 @@
     "answers": [
       {
         "text": "Sí, pero sólo en vías urbanas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, cuando las condiciones meteorológicas sean favorables.",
@@ -19941,7 +19941,7 @@
       },
       {
         "text": "Evitando la conducción de forma brusca, con fuertes arrancadas, acelerones y frenazos.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": []
@@ -19954,7 +19954,7 @@
     "answers": [
       {
         "text": "no tiene influencia en el desplazamiento de la masa de la carga.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "tiene influencia sobre su estabilidad.",
@@ -20084,7 +20084,7 @@
     "answers": [
       {
         "text": "sin importancia.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "poco importante.",
@@ -20252,7 +20252,7 @@
     "answers": [
       {
         "text": "pase rápidamente.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "me detenga.",
@@ -20315,7 +20315,7 @@
     "answers": [
       {
         "text": "No, porque las señales verticales lo prohíben.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, cuando no circulen bicicletas.",
@@ -20462,7 +20462,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, salvo que una señal lo prohíba expresamente.",
@@ -20504,7 +20504,7 @@
     "answers": [
       {
         "text": "No, salvo que las condiciones meteorológicas sean adversas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, siempre.",
@@ -20567,7 +20567,7 @@
     "answers": [
       {
         "text": "Sí, salvo que emita poco humo.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, porque contamina el medio ambiente.",
@@ -20588,7 +20588,7 @@
     "answers": [
       {
         "text": "Vehículo de uso compartido.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "La clasificación ambiental que el vehículo tiene en el Registro de Vehículos.",
@@ -20739,7 +20739,7 @@
       },
       {
         "text": "A más de 45 km/h porque está adelantando.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "A más de 45 km/h, porque circula por la calzada.",
@@ -20836,7 +20836,7 @@
     "answers": [
       {
         "text": "Sí, porque al mojarse pueden perder eficacia.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, no resultan afectados.",
@@ -21093,7 +21093,7 @@
     "answers": [
       {
         "text": "Por ninguna de ellas.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sólo por la vía indicada con la señal B.",
@@ -21211,7 +21211,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -21266,7 +21266,7 @@
     "answers": [
       {
         "text": "por la acera.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "por la izquierda de la calzada.",
@@ -21329,7 +21329,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí",
@@ -21468,7 +21468,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -21750,7 +21750,7 @@
     "answers": [
       {
         "text": "50 metros.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "150 metros.",
@@ -21771,7 +21771,7 @@
     "answers": [
       {
         "text": "No, porque no circulan vehículos por la calzada.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -21809,7 +21809,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -22036,7 +22036,7 @@
     "answers": [
       {
         "text": "Todos los que estén autorizados a circular por la vía.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sólo turismo y motocicletas.",
@@ -22116,7 +22116,7 @@
     "answers": [
       {
         "text": "No, porque puede entrar sueño.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, porque se conduce más relajado y cómodo.",
@@ -22242,7 +22242,7 @@
     "answers": [
       {
         "text": "el turismo rojo.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "el ciclomotor.",
@@ -22263,7 +22263,7 @@
     "answers": [
       {
         "text": "en columna de a dos.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "en grupo, formando un pelotón.",
@@ -22284,7 +22284,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -22343,7 +22343,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -22423,7 +22423,7 @@
     "answers": [
       {
         "text": "parar y estacionar.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "parar, pero no estacionar.",
@@ -22591,7 +22591,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -22650,7 +22650,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -22793,7 +22793,7 @@
       },
       {
         "text": "No, es mejor conducir con mucha hambre.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, porque me puede entrar sueño.",
@@ -22852,7 +22852,7 @@
     "answers": [
       {
         "text": "el estado de la vía, del entorno y el comportamiento del conductor.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "especialmente del estado del vehículo y, en menor medida, el comportamiento del conductor.",
@@ -22936,7 +22936,7 @@
     "answers": [
       {
         "text": "iluminar adecuadamente la vía evitando deslumbramientos.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "mayor duración de las lámparas.",
@@ -23230,7 +23230,7 @@
     "answers": [
       {
         "text": "Sí, pero únicamente en la última parada cuando llegue al centro escolar.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, en todas las paradas.",
@@ -23272,7 +23272,7 @@
     "answers": [
       {
         "text": "los más jóvenes.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "las personas mayores de 65 años.",
@@ -23486,7 +23486,7 @@
       },
       {
         "text": "No, porque en ningún caso se puede superar la velocidad máxima permitida.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, porque estos vehículos pueden circular por encima de los límites de velocidad.",
@@ -23524,7 +23524,7 @@
     "answers": [
       {
         "text": "Sí, pero únicamente para adelantar.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No, salvo que deba incorporarse a otra vía en la que no exista este carril.",
@@ -23801,7 +23801,7 @@
       },
       {
         "text": "el factor de riesgo que más influye en su producción es el denominado \"factor humano\".",
-        "correct": false
+        "correct": true
       },
       {
         "text": "la mayoría son inevitables.",
@@ -23860,7 +23860,7 @@
     "answers": [
       {
         "text": "Que debo detenerme, salvo que no pueda hacerlo en condiciones de seguridad suficientes.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Que puedo continuar de frente o girar.",
@@ -24070,7 +24070,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -24507,7 +24507,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -24742,7 +24742,7 @@
       },
       {
         "text": "Sí, salvo que los pasajeros indiquen al conductor que deje de hacerlo.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": []
@@ -24902,7 +24902,7 @@
     "answers": [
       {
         "text": "Solamente en el lado derecho.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "En el lado izquierdo, preferentemente.",
@@ -25129,7 +25129,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -25322,7 +25322,7 @@
       },
       {
         "text": "Sólo cuando tengan más de 25 plazas.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": []
@@ -26650,7 +26650,7 @@
     "answers": [
       {
         "text": "No, no es obligatorio porque es de día.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, es obligatorio.",
@@ -26923,7 +26923,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -27003,7 +27003,7 @@
     "answers": [
       {
         "text": "Sí, pero solamente cuando no estén cruzando peatones.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, a condición que sea por tiempo inferior a dos minutos.",
@@ -27024,7 +27024,7 @@
     "answers": [
       {
         "text": "Detenerme y cede el paso a los vehículos de la vía transversal.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Continuar sin detenerme, pero con precaución.",
@@ -27087,7 +27087,7 @@
     "answers": [
       {
         "text": "No, esta señal sólo es obligatoria para los autobuses.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, pero solamente cuando circule dentro de poblado.",
@@ -27196,7 +27196,7 @@
       },
       {
         "text": "Ninguno de los ocupantes está obligado.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Únicamente los pasajeros.",
@@ -27348,7 +27348,7 @@
     "answers": [
       {
         "text": "Sí, en todo caso.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, en algunos casos.",
@@ -27390,7 +27390,7 @@
     "answers": [
       {
         "text": "Sí, en todo caso debe utilizar un sistema de retención adaptado a su talla y peso.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, los cinturones de seguridad para adultos.",
@@ -27411,7 +27411,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -27499,7 +27499,7 @@
       },
       {
         "text": "Sí, pero no en el caso de que se trate de órdenes y señales efectuadas en una intersección.",
-        "correct": false
+        "correct": true
       }
     ],
     "tests": []
@@ -27617,7 +27617,7 @@
     "answers": [
       {
         "text": "Sí, pero únicamente si circulo por el arcén.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, siempre.",
@@ -28067,7 +28067,7 @@
     "answers": [
       {
         "text": "A 120 km/h.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "A 140 km/h.",
@@ -28319,7 +28319,7 @@
     "answers": [
       {
         "text": "Sí, en poblado, no fuera de poblado.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -28533,7 +28533,7 @@
       },
       {
         "text": "Sí, cuando no haya peatones cruzando.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, porque el viajero es un peatón.",
@@ -28739,7 +28739,7 @@
     "answers": [
       {
         "text": "El D1+E.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "El D.",
@@ -28945,7 +28945,7 @@
     "answers": [
       {
         "text": "Sí",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -29252,7 +29252,7 @@
       },
       {
         "text": "No, porque está prohibido llevar animales en los autobuses de servicio público.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -29269,7 +29269,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -29290,7 +29290,7 @@
     "answers": [
       {
         "text": "Sí, siempre.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No es obligatorio, pero sí es aconsejable.",
@@ -29332,7 +29332,7 @@
     "answers": [
       {
         "text": "El D+E.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "El D.",
@@ -29966,7 +29966,7 @@
       },
       {
         "text": "No, porque las luces de gálibo sólo son obligatorias para camiones.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -30113,7 +30113,7 @@
       },
       {
         "text": "observar si el herido mira, oye, siente y si tiene otros signos.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "colocar al herido en la posición de defensa.",
@@ -30214,7 +30214,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -30315,7 +30315,7 @@
     "answers": [
       {
         "text": "Aumentando la distancia de frenado.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Disminuyendo la eficacia de frenado.",
@@ -30861,7 +30861,7 @@
     "answers": [
       {
         "text": "No.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí.",
@@ -30983,7 +30983,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -31458,7 +31458,7 @@
     "answers": [
       {
         "text": "No, porque se debe dejar seleccionada, en todo caso, la primera velocidad.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No es necesario, si empleamos el freno de estacionamiento.",
@@ -31542,7 +31542,7 @@
     "answers": [
       {
         "text": "Mayor que en condiciones normales.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "La misma que con la calzada seca.",
@@ -31563,7 +31563,7 @@
     "answers": [
       {
         "text": "La fuerza motriz y la fuerza de frenado.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "La fuerza de guiado atemporal y la fuerza de fricción.",
@@ -31874,7 +31874,7 @@
     "answers": [
       {
         "text": "El D.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "El D+E.",
@@ -31895,7 +31895,7 @@
     "answers": [
       {
         "text": "las ruedas duran más.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "se pierde adherencia.",
@@ -32252,7 +32252,7 @@
     "answers": [
       {
         "text": "No, en ningún caso",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sí, pero sólo si está consciente.",
@@ -32273,7 +32273,7 @@
     "answers": [
       {
         "text": "En todas las vías.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sólo en travesías y vías interurbanas.",
@@ -32605,7 +32605,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -32849,7 +32849,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -32908,7 +32908,7 @@
     "answers": [
       {
         "text": "No es obligatorio, pero sí aconsejable.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -32929,7 +32929,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",
@@ -32954,7 +32954,7 @@
       },
       {
         "text": "No existe obligación aunque resulta aconsejable.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "Sólo es necesario cuando se moleste a otros vehículos.",
@@ -33034,7 +33034,7 @@
     "answers": [
       {
         "text": "Sí.",
-        "correct": false
+        "correct": true
       },
       {
         "text": "No.",

@@ -771,6 +771,7 @@ button {
 }
 
 .image-grid-item {
+  position: relative;
   aspect-ratio: 1;
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -791,6 +792,48 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.image-grid-item--selected {
+  outline: 3px solid var(--color-primary, #4f8ef7);
+  outline-offset: -3px;
+}
+
+.image-grid-check {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-primary, #4f8ef7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.image-test-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--color-surface, #1e1e1e);
+  border-top: 1px solid var(--color-border, #333);
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-test-bar span {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* ─── Question Modal ────────────────────────────────── */

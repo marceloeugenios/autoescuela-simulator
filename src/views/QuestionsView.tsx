@@ -21,7 +21,7 @@ export default function QuestionsView() {
   const filtered = useMemo(() => {
     const kw = keyword.trim().toLowerCase()
     return allQuestions.filter(q => {
-      if (kw && !q.question.toLowerCase().includes(kw) && !q.explanation.toLowerCase().includes(kw)) return false
+      if (kw && !q.question.toLowerCase().includes(kw) && !q.explanation.toLowerCase().includes(kw) && !String(q.id).includes(kw)) return false
       if (testFilter === 'bank') { if (q.tests.length > 0) return false }
       else if (testFilter !== 'all') { if (!q.tests.some(t => t.name === testFilter)) return false }
       if (imageFilter === 'with' && !q.image) return false
@@ -59,7 +59,7 @@ export default function QuestionsView() {
           >
             <option value="all">All tests</option>
             {groupNames.map(name => (
-              <option key={name} value={name}>Test {name}</option>
+              <option key={name} value={name}>{name}</option>
             ))}
             <option value="bank">Bank (no test)</option>
           </select>
@@ -122,7 +122,7 @@ function QuestionCard({ question: q, inRetryQueue }: { question: Question; inRet
           {q.image && <span className="qbank-badge badge-image">img</span>}
           {inRetryQueue && <span className="qbank-badge badge-retry">retry</span>}
         </div>
-        <p className="qbank-question">{q.question}</p>
+        <p className="qbank-question"><span style={{ fontSize: 11, opacity: 0.5, marginRight: 6 }}>#{q.id}</span>{q.question}</p>
         <svg
           className="qbank-chevron"
           width="16" height="16" viewBox="0 0 24 24"

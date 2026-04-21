@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import type { Question } from '../types'
 
@@ -10,6 +10,7 @@ function formatTime(s: number) {
 export default function TestView() {
   const { testId } = useParams<{ testId: string }>()
   const navigate = useNavigate()
+  const location = useLocation()
   const { questions, tests, retryQueue, addToRetryQueue } = useApp()
 
   const [questionList, setQuestionList] = useState<Question[]>([])
@@ -26,7 +27,9 @@ export default function TestView() {
     const ids =
       testId === 'retry'
         ? retryQueueSnapshot.current
-        : (tests[Number(testId)]?.question_ids ?? [])
+        : testId === 'image-test'
+          ? ((location.state as { questionIds?: number[] })?.questionIds ?? [])
+          : (tests[Number(testId)]?.question_ids ?? [])
 
     const qs = ids.map(id => questions[id]).filter(Boolean) as Question[]
     if (qs.length === 0) { navigate('/'); return }

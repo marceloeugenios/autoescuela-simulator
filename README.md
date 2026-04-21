@@ -9,9 +9,10 @@ A **Progressive Web App (PWA)** for practising the A1/A2 motorcycle driving theo
 - **Test simulator** — reproduces the official 34 tests (20 questions each) in the exact server order, with question images where available
 - **Answer feedback** — after each answer, shows whether it was correct/incorrect and displays the explanation text
 - **Test summary** — on completion, shows score and pass/fail result (**max 2 mistakes allowed** out of 20 questions), time taken, and a breakdown of every question
-- **"To be retried" category** — questions answered incorrectly are automatically grouped into a personal retry queue; the user can launch a custom test from this pool at any time
-- **Question bank** — browse all 1 432 questions with filters: keyword search (question + explanation text), test group (5031–5047), image presence, and retry-queue membership; each card expands inline to show answers and explanation
-- **Image gallery** — grid of all 848 question images; tap any image to open a modal with the full image, a "See related question" button that reveals the question, answers (correct answer highlighted), explanation, and a direct link to start the associated test
+- **"To be retried" category** — questions answered incorrectly are automatically grouped into a personal retry queue; launch a custom test from this pool at any time
+- **Question bank** — browse all 1 432 questions with filters: keyword search (question text, explanation, or question ID), test group (5031–5047), image presence, and retry-queue membership; each card shows the question `#id` and expands inline to show answers and explanation
+- **Image gallery** — grid of all 848 question images; tap any image to open a modal with the full image (tap image to close), question `#id`, question text, answers (correct highlighted), explanation, and a direct link to the associated test
+- **Image test builder** — in the image gallery, switch to select mode to pick specific images and generate an ad-hoc in-memory test from those questions
 - **Offline-first** — all question data (`questions.json`, `tests.json`) and images (`pictures/`) are cached via a Service Worker; no network required after first load
 - **PWA installable** — `manifest.json` with icon set; add-to-home-screen on iOS/Android gives a native-app feel
 
@@ -49,13 +50,17 @@ src/
     ├── TestView.tsx           # Active test: questions, timer, answer feedback
     ├── ResultView.tsx         # Score, pass/fail, mistakes log, retry test
     ├── RetryQueueView.tsx     # Queue list with remove + launch controls
-    ├── QuestionsView.tsx      # Filterable question bank (keyword, test, image, retry)
-    └── ImagesView.tsx         # Image grid; tap → modal with question + test link
+    ├── QuestionsView.tsx      # Filterable question bank (keyword/id, test, image, retry)
+    └── ImagesView.tsx         # Image grid; tap → modal; select mode → image test builder
 
 public/
 ├── questions/                # questions.json, tests.json (fetched at runtime)
 ├── pictures/                 # 848 JPEG question images (cached by SW)
 └── icons/                    # PWA icons
+
+scraping/
+├── scraper.py                # Full scraper — login, test discovery, question fetch
+└── fix_missing_correct.py    # Targeted re-fetch for questions missing a correct answer
 ```
 
 ### Development
@@ -71,25 +76,27 @@ npm run preview  # Preview the production build locally
 
 | Route | View | Description |
 |-------|------|-------------|
-| `/#/` | Home | One test group at a time (5031–5047); prev/next arrows + dropdown to switch group; Part 1 / Part 2 launch buttons; shortcuts to Question Bank and Images; "To be retried" card if queue is non-empty |
-| `/#/test/:cditest` | Test | One question at a time; optional image; answer options; immediate correct/incorrect feedback + explanation; progress bar; timer |
+| `/#/` | Home | Test groups 5031–5047; dropdown shows code only; "Select the test you want to perform" prompt; Part 1 / Part 2 launch buttons; shortcuts to Question Bank and Images; "To be retried" card if queue is non-empty |
+| `/#/test/:testId` | Test | One question at a time; optional image; answer options; immediate correct/incorrect feedback + explanation; progress bar; timer. `testId` can be a `cditest` number, `retry`, or `image-test` |
 | `/#/result` | Result | Pass/fail (≤ 2 mistakes), score, time taken; mistakes log with explanations; retry same test |
 | `/#/retry` | Retry Queue | List of incorrectly-answered questions; launch as custom test; remove individual entries or clear all |
-| `/#/questions` | Question Bank | All 1 432 questions with live filters: keyword, test group, image presence, retry-queue; expandable cards showing answers + explanation |
-| `/#/images` | Images | 3–4 column grid of all 848 question images (48 per page); tap image → bottom-sheet modal with full image → "See related question" reveals question, highlighted correct answer, explanation, and link to start the associated test |
+| `/#/questions` | Question Bank | All 1 432 questions with live filters: keyword (text + explanation + `#id`), test group (code only), image presence, retry-queue; expandable cards showing `#id`, answers + explanation |
+| `/#/images` | Images | 3–4 column grid of all 848 question images (48 per page); tap → modal (tap image to close) showing `#id`, question, correct answer highlighted, explanation, test link. "Select for test" mode lets you pick images and launch an ad-hoc test |
 
 ---
 
 ## Scraper
 
-## Credentials
+### Credentials
 
-| Field   | Value       |
-|---------|-------------|
+| Field   | Value |
+|---------|-------|
 | Site    | https://matferline.com/alumno |
-| Usuario | NIE   |
-| Senha   | NIE   |
+| Usuario | `<NIE>` (e.g. `Z1246219S`) |
+| Senha   | same as Usuario |
 | School  | AUTOESCOLA RACC BARNA DOS (code: `barna`) |
+
+> Both `usuario` and `clave` must be set to the student's NIE. Using `NIE`/`NIE` (the old placeholder) returns `0` (failure).
 
 ---
 
@@ -110,8 +117,9 @@ POST https://matferline.com/acceso/php_script/validar_ae.php
 
 ```
 POST https://matferline.com/alumno/php_script/validar_datos_alumno.php
-     Fields: usuario=NIE, clave=NIE   (multipart/form-data)
+     Fields: usuario=<NIE>, clave=<NIE>   (multipart/form-data)
      Response: "ok,2,101"   (short CSV = success; cdipermiso=2, programa=101)
+     Response: "0"          (numeric = failure — wrong credentials)
 ```
 
 ### Step 3 — Discover available tests
@@ -151,8 +159,6 @@ Confirmed tests for Permiso A1-A2 (cdicurso=1, cdipermiso=2, programa=101):
 
 ### Step 4 — Get question IDs per test
 
-For each `cditest`, POST to the test page to retrieve its 20 question IDs:
-
 ```
 POST https://matferline.com/alumno/alumno_fullscreen_test_infotest.php
      Fields (multipart/form-data):
@@ -174,13 +180,14 @@ POST https://matferline.com/alumno/php_script/obtener_pregunta_fullscreen.php
      Fields: cdipregunta=<ID>, identificacion=FV, tipo_test=0
      Referer: .../alumno/alumno_fullscreen_test_infotest.php
 
-     Response format (ISO-8859-1 bytes, decoded as UTF-8):
+     Response format (UTF-8):
        image_filename###<strong>question html</strong>##answer1##answer2##answer3##[answer4|__]##explanation text\t
 ```
 
 - `__` are empty-slot placeholders (questions have 2 or 3 answers)
 - `explanation` restates the question with the correct answer embedded
-- Correct answer is identified by word-overlap between explanation and answer options
+- Correct answer is identified by word-overlap between explanation and answer options (threshold ≥ 0.3)
+- If no answer scores above threshold, run `fix_missing_correct.py` (uses no-threshold fallback — always picks the best match)
 - Image URL: `https://matferline.com/panel/preguntas/adjuntos/thumb1/{image_filename}`
 
 ### Step 6 — Auxiliary endpoints
@@ -189,19 +196,18 @@ POST https://matferline.com/alumno/php_script/obtener_pregunta_fullscreen.php
 POST https://matferline.com/alumno/php_script/info_test.php
      Fields: cdicurso=<N>, cdipermiso=2
      Response: "FORMACIÓN VIAL*PERMISO A1 - A2*2_A1-A2.jpg"
-     → Returns course name; cdicurso 1–15 are valid for this account
 
 POST https://matferline.com/alumno/php_script/obtener_CTA_num_fallos.php
      Fields: cdipermiso=2
      Response: "b#a#a#a#b#a#c#b#c#a#c#a#c#b#a#b#b#c#b#c*2"
-     → Answer positions per test slot (a/b/c separated by #)
+     → Correct answer positions per test slot (a/b/c)
 ```
 
 ---
 
-## Scraper
+## Running the scraper
 
-```
+```bash
 pip install requests beautifulsoup4
 python3 scraping/scraper.py
 ```
@@ -214,11 +220,17 @@ python3 scraping/scraper.py
 4. Builds a `question → test(s)` map
 5. Fetches all unique question IDs (caches already-scraped ones from `questions.json`)
 6. Downloads images to `pictures/`
-7. Saves `questions/questions.json` and `questions/tests.json`
+7. Saves `public/questions/questions.json` and `public/questions/tests.json`
 
-### Encoding fix
+### Fixing questions with no correct answer
 
-The server sends UTF-8 bytes but PHP responds without a charset header, causing `requests` to default to ISO-8859-1. Fix applied: `r.encoding = "utf-8"` before accessing `r.text` in all PHP script calls.
+If after scraping some questions have all answers marked `false`, run:
+
+```bash
+python3 scraping/fix_missing_correct.py
+```
+
+This re-fetches only the affected questions using a no-threshold matching strategy (always picks the best-scoring answer). All 1 432 questions currently have a correct answer.
 
 ---
 
@@ -244,9 +256,10 @@ The server sends UTF-8 bytes but PHP responds without a charset header, causing 
 ]
 ```
 
-- **1432 total questions** (680 from the 34 structured tests + 752 from sequential scan)
-- **`tests` field**: list of tests this question belongs to — empty `[]` for questions not assigned to any test
-- Questions with `tests: []` are extra bank questions outside the 34 official tests
+- **1 432 total questions** — all have at least one `correct: true` answer
+- **`tests` field**: list of tests this question belongs to — empty `[]` for bank-only questions
+- 752 questions have `tests: []` (outside the 34 official tests)
+- Questions have 2 answers (109) or 3 answers (1 323)
 
 ### `questions/tests.json`
 
@@ -261,11 +274,10 @@ The server sends UTF-8 bytes but PHP responds without a charset header, causing 
 ```
 
 - **34 tests**, each with exactly 20 question IDs in the original server order
-- Use this file to reconstruct the exact test sequence
 
 ### `pictures/`
 
-Images downloaded from `https://matferline.com/panel/preguntas/adjuntos/thumb1/{filename}`
+848 JPEG images downloaded from `https://matferline.com/panel/preguntas/adjuntos/thumb1/{filename}`
 
 ---
 
@@ -281,5 +293,4 @@ Images downloaded from `https://matferline.com/panel/preguntas/adjuntos/thumb1/{
 | Course info              | POST   | `/alumno/php_script/info_test.php` |
 | Image download           | GET    | `/panel/preguntas/adjuntos/thumb1/{filename}` |
 
-**Credentials**: school code `barna`, student `NIE` / `NIE`  
 **Permit type**: A1-A2 (cdipermiso=2, cdicurso=1, cdicategoria=3, programa=101)

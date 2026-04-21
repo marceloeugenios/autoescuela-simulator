@@ -40,6 +40,9 @@ export default function HomeView() {
       </div>
 
       <div className="test-selector">
+        <p style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 10, textAlign: 'center' }}>
+          Select the test you want to perform
+        </p>
         <div className="test-nav">
           <button
             className="nav-arrow-btn"
@@ -58,7 +61,7 @@ export default function HomeView() {
             onChange={e => setCurrentGroupIndex(Number(e.target.value))}
           >
             {groupNames.map((n, i) => (
-              <option key={n} value={i}>Test {n}</option>
+              <option key={n} value={i}>{n}</option>
             ))}
           </select>
 

@@ -26,10 +26,13 @@
 auto-escola-simulator/
 ├── public/
 │   ├── questions/
-│   │   ├── questions.json     # 1 432 questions
+│   │   ├── questions.json     # 1 432 questions (all with at least 1 correct answer)
 │   │   └── tests.json         # 34 tests × 20 question IDs
 │   ├── pictures/              # 848 JPEG question images
 │   └── icons/                 # PWA icons (192 × 192, 512 × 512)
+├── scraping/
+│   ├── scraper.py             # Full scraper — login, test discovery, question fetch
+│   └── fix_missing_correct.py # Targeted re-fetch for questions with no correct answer
 ├── src/
 │   ├── types.ts               # Shared TypeScript interfaces
 │   ├── main.tsx               # createRoot entry point
@@ -41,11 +44,11 @@ auto-escola-simulator/
 │   │   └── Header.tsx         # Sticky header; contextual title + back button
 │   └── views/
 │       ├── HomeView.tsx        # Test group navigator + bank/images shortcuts
-│       ├── TestView.tsx        # Active test runner
+│       ├── TestView.tsx        # Active test runner (official tests, retry, image tests)
 │       ├── ResultView.tsx      # Score + mistakes log
 │       ├── RetryQueueView.tsx  # Retry queue manager
 │       ├── QuestionsView.tsx   # Filterable question bank
-│       └── ImagesView.tsx      # Image gallery + question modal
+│       └── ImagesView.tsx      # Image gallery + question modal + image test builder
 ├── index.html                 # Vite HTML entry (no manifest link — injected by plugin)
 ├── vite.config.ts             # Vite + React plugin + PWA plugin config
 ├── tsconfig.json
@@ -59,7 +62,7 @@ auto-escola-simulator/
 | Hash path | View | Notes |
 |-----------|------|-------|
 | `/#/` | HomeView | Default |
-| `/#/test/:testId` | TestView | `testId` = `cditest` number or `retry` |
+| `/#/test/:testId` | TestView | `testId` = `cditest` number, `retry`, or `image-test` |
 | `/#/result` | ResultView | Receives `TestResult` via router location state |
 | `/#/retry` | RetryQueueView | |
 | `/#/questions` | QuestionsView | |
@@ -84,17 +87,21 @@ auto-escola-simulator/
 ## Views
 
 ### HomeView
-- Prev / next arrow buttons + dropdown selector to navigate across the 17 test groups (5031–5047)
-- Clicking a group immediately shows its Part 1 and Part 2 launch buttons
+- "Select the test you want to perform" prompt above the selector
+- Prev / next arrow buttons + dropdown showing only the test code (e.g. `5031`, no "Test" prefix) to navigate across the 17 test groups
+- Clicking a group shows its Part 1 and Part 2 launch buttons with question counts
 - "To Be Retried" card visible only when retry queue is non-empty
 - Two secondary buttons: **Question Bank** (`/#/questions`) and **Browse Images** (`/#/images`)
 
 ### TestView
-- Resolves question list from `cditest` param (or `retryQueue` snapshot when `testId === 'retry'`)
+- Resolves question list from three sources:
+  - `cditest` number → looks up `tests` map
+  - `retry` → uses `retryQueue` snapshot at test-start time
+  - `image-test` → reads `questionIds` array from `location.state` (set by ImagesView image test builder)
 - One question at a time: optional image → question text → answer buttons
 - On answer: all buttons lock; correct answer gets green border; wrong selection gets red; explanation panel slides in
 - "Next Question" / "Finish Test" advances state
-- On finish: new mistakes (not already in retry queue) are added; navigates to ResultView via router state
+- On finish: new mistakes added to retry queue; navigates to ResultView via router state
 
 ### ResultView
 - Reads `TestResult` from `location.state` (questions, mistakes, timerSeconds, testId)
@@ -107,17 +114,43 @@ auto-escola-simulator/
 - "Start Custom Test" → `/#/test/retry`
 
 ### QuestionsView
-- Filters (live, combined): keyword (question + explanation text), test group dropdown, image presence dropdown, retry-queue toggle chip
+- Filters (live, combined): keyword (question text + explanation + question ID), test group dropdown (code only, no "Test" prefix), image presence dropdown, retry-queue toggle chip
 - Results count shown in subtitle
 - Load-more pagination (30 per page)
-- Each card: badges (test group / bank / img / retry), question text, expandable body with answer list (correct answer highlighted green + checkmark) and explanation
+- Each card: question ID prefix (`#id`), badges (test group / bank / img / retry), question text, expandable body with answer list (correct answer highlighted green + checkmark) and explanation
 
 ### ImagesView
 - Keyword filter on question/explanation text
 - CSS grid (3 cols mobile, 4 cols ≥480 px), `loading="lazy"`, load-more pagination (48 per page)
-- Click thumbnail → `createPortal` modal rendered into `document.body` (avoids stacking context issues)
-- Modal step 1: full-size image + "See related question" button
-- Modal step 2: question text, answers (correct answer has green border + bold + checkmark icon), explanation, test link buttons ("Go to Test 5031 · Part 1") that close modal and navigate to the test
+- **Normal mode**: click thumbnail → `createPortal` modal rendered into `document.body`
+  - Modal shows full-size image (click image or backdrop to close)
+  - Question `#id` displayed above question text for easy cross-reference with the bank
+  - Question text, answers (correct highlighted green + checkmark), explanation
+  - Test link buttons ("Go to 5031 · Part 1") that close modal and navigate to the test
+- **Select mode** (toggled via "Select for test" button):
+  - Clicking thumbnails toggles selection (blue outline + checkmark badge)
+  - Sticky bottom bar shows selected count + "Clear" + "Start Test" buttons
+  - "Start Test" navigates to `/#/test/image-test` with selected question IDs via router state
+
+---
+
+## Data Notes
+
+- `questions.json` image paths include the `pictures/` prefix (e.g. `pictures/9469_graf_873mod.jpg`) — rendered as `/${q.image}`
+- Each image maps to exactly one question (848 unique images, 848 questions with images)
+- All 1 432 questions have at least one correct answer (186 were fixed via `fix_missing_correct.py`)
+- 752 questions have `tests: []` (bank questions outside the 34 official tests)
+- Questions have 2 answers (109) or 3 answers (1 323)
+
+---
+
+## Scraping
+
+### scraper.py
+Full scraper for `matferline.com/alumno`. Login flow: school code `barna` → student credentials (`usuario=<NIE>, clave=<NIE>`). Discovers all tests from the student menu, fetches question IDs per test, then fetches each question. Correct answer is inferred by matching explanation text against answer options (word-overlap score ≥ 0.3).
+
+### fix_missing_correct.py
+Targeted re-fetch for questions where the original heuristic scored below threshold and left no correct answer marked. Uses the same matching logic but with no threshold cutoff — always picks the best-scoring answer. Run after the main scraper whenever `questions.json` contains entries with all `correct: false`.
 
 ---
 
@@ -129,15 +162,6 @@ Handled entirely by `vite-plugin-pwa` (Workbox `generateSW` strategy):
 - **Runtime cache — `pictures-cache`**: Cache-First, max 1 000 entries, 1-year TTL
 - **Runtime cache — `questions-cache`**: Cache-First for `/questions/*.json`
 - SW registered with `registerType: 'autoUpdate'`
-
----
-
-## Data Notes
-
-- `questions.json` image paths already include the `pictures/` prefix (e.g. `pictures/9469_graf_873mod.jpg`) — rendered as `/${q.image}`
-- Each image maps to exactly one question (848 unique images, 848 questions with images)
-- 752 questions have `tests: []` (bank questions outside the 34 official tests)
-- Questions have 2 answers (109) or 3 answers (1 320)
 
 ---
 
