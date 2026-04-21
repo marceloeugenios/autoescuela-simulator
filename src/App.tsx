@@ -5,6 +5,8 @@ import HomeView from './views/HomeView'
 import TestView from './views/TestView'
 import ResultView from './views/ResultView'
 import RetryQueueView from './views/RetryQueueView'
+import QuestionsView from './views/QuestionsView'
+import ImagesView from './views/ImagesView'
 
 function AppShell() {
   const { loading } = useApp()
@@ -26,6 +28,8 @@ function AppShell() {
           <Route path="/test/:testId" element={<TestView />} />
           <Route path="/result" element={<ResultView />} />
           <Route path="/retry" element={<RetryQueueView />} />
+          <Route path="/questions" element={<QuestionsView />} />
+          <Route path="/images" element={<ImagesView />} />
         </Routes>
       </main>
     </>

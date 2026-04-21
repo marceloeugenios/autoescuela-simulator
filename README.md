@@ -10,6 +10,8 @@ A **Progressive Web App (PWA)** for practising the A1/A2 motorcycle driving theo
 - **Answer feedback** — after each answer, shows whether it was correct/incorrect and displays the explanation text
 - **Test summary** — on completion, shows score and pass/fail result (**max 2 mistakes allowed** out of 20 questions), time taken, and a breakdown of every question
 - **"To be retried" category** — questions answered incorrectly are automatically grouped into a personal retry queue; the user can launch a custom test from this pool at any time
+- **Question bank** — browse all 1 432 questions with filters: keyword search (question + explanation text), test group (5031–5047), image presence, and retry-queue membership; each card expands inline to show answers and explanation
+- **Image gallery** — grid of all 848 question images; tap any image to open a modal with the full image, a "See related question" button that reveals the question, answers (correct answer highlighted), explanation, and a direct link to start the associated test
 - **Offline-first** — all question data (`questions.json`, `tests.json`) and images (`pictures/`) are cached via a Service Worker; no network required after first load
 - **PWA installable** — `manifest.json` with icon set; add-to-home-screen on iOS/Android gives a native-app feel
 
@@ -43,10 +45,12 @@ src/
 ├── components/
 │   └── Header.tsx            # Sticky header with contextual back button
 └── views/
-    ├── HomeView.tsx           # Test group selector (prev/next + dropdown)
+    ├── HomeView.tsx           # Test group selector (prev/next + dropdown) + nav to bank/images
     ├── TestView.tsx           # Active test: questions, timer, answer feedback
-    ├── ResultView.tsx         # Score, pass/fail, mistakes log
-    └── RetryQueueView.tsx     # Queue list with remove + launch controls
+    ├── ResultView.tsx         # Score, pass/fail, mistakes log, retry test
+    ├── RetryQueueView.tsx     # Queue list with remove + launch controls
+    ├── QuestionsView.tsx      # Filterable question bank (keyword, test, image, retry)
+    └── ImagesView.tsx         # Image grid; tap → modal with question + test link
 
 public/
 ├── questions/                # questions.json, tests.json (fetched at runtime)
@@ -65,10 +69,14 @@ npm run preview  # Preview the production build locally
 
 ### App screens
 
-1. **Home** — shows one test group at a time (5031–5047); navigate between groups with prev/next controls or a selector to jump to any group; selecting a group reveals its subgroups (Part 1, Part 2) which can be launched directly; button to open "To be retried" test if the retry queue is non-empty
-2. **Test** — one question at a time; image (if present) + question text + answer options; progress bar; timer
-3. **Result** — per-question review (correct/incorrect/explanation); overall score; wrong answers automatically added to retry queue
-4. **Retry queue** — list of questions flagged for retry; launch as a fresh test; remove individual entries
+| Route | View | Description |
+|-------|------|-------------|
+| `/#/` | Home | One test group at a time (5031–5047); prev/next arrows + dropdown to switch group; Part 1 / Part 2 launch buttons; shortcuts to Question Bank and Images; "To be retried" card if queue is non-empty |
+| `/#/test/:cditest` | Test | One question at a time; optional image; answer options; immediate correct/incorrect feedback + explanation; progress bar; timer |
+| `/#/result` | Result | Pass/fail (≤ 2 mistakes), score, time taken; mistakes log with explanations; retry same test |
+| `/#/retry` | Retry Queue | List of incorrectly-answered questions; launch as custom test; remove individual entries or clear all |
+| `/#/questions` | Question Bank | All 1 432 questions with live filters: keyword, test group, image presence, retry-queue; expandable cards showing answers + explanation |
+| `/#/images` | Images | 3–4 column grid of all 848 question images (48 per page); tap image → bottom-sheet modal with full image → "See related question" reveals question, highlighted correct answer, explanation, and link to start the associated test |
 
 ---
 

@@ -4,6 +4,8 @@ const TITLES: Record<string, string> = {
   '/': 'Simulator',
   '/retry': 'Retry Queue',
   '/result': 'Test Result',
+  '/questions': 'Question Bank',
+  '/images': 'Images',
 }
 
 export default function Header() {

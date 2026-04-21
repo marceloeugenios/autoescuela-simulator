@@ -30,6 +30,15 @@ export default function HomeView() {
         </div>
       )}
 
+      <div style={{ display: 'flex', gap: 10, marginBottom: 16 }}>
+        <button className="secondary-btn" style={{ flex: 1 }} onClick={() => navigate('/questions')}>
+          Question Bank
+        </button>
+        <button className="secondary-btn" style={{ flex: 1 }} onClick={() => navigate('/images')}>
+          Browse Images
+        </button>
+      </div>
+
       <div className="test-selector">
         <div className="test-nav">
           <button
