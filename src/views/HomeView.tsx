@@ -37,6 +37,9 @@ export default function HomeView() {
         <button className="secondary-btn" style={{ flex: 1 }} onClick={() => navigate('/images')}>
           Browse Images
         </button>
+        <button className="secondary-btn" style={{ flex: 1 }} onClick={() => navigate('/focus-tests')}>
+          Focus Tests
+        </button>
       </div>
 
       <div className="test-selector">

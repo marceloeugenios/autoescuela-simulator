@@ -27,7 +27,7 @@ export default function TestView() {
     const ids =
       testId === 'retry'
         ? retryQueueSnapshot.current
-        : testId === 'image-test'
+        : testId === 'image-test' || testId === 'focus-test'
           ? ((location.state as { questionIds?: number[] })?.questionIds ?? [])
           : (tests[Number(testId)]?.question_ids ?? [])
 

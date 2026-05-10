@@ -7,6 +7,7 @@ import ResultView from './views/ResultView'
 import RetryQueueView from './views/RetryQueueView'
 import QuestionsView from './views/QuestionsView'
 import ImagesView from './views/ImagesView'
+import FocusTestsView from './views/FocusTestsView'
 
 function AppShell() {
   const { loading } = useApp()
@@ -30,6 +31,7 @@ function AppShell() {
           <Route path="/retry" element={<RetryQueueView />} />
           <Route path="/questions" element={<QuestionsView />} />
           <Route path="/images" element={<ImagesView />} />
+          <Route path="/focus-tests" element={<FocusTestsView />} />
         </Routes>
       </main>
     </>

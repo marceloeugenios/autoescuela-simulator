@@ -1,5 +1,11 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
-import type { Question, Test, QuestionsMap, TestsMap, TestGroups } from '../types'
+import type { Question, Test, QuestionsMap, TestsMap, TestGroups, FocusCategory } from '../types'
+
+const FOCUS_DEFS = [
+  { id: 'speed',    label: 'Velocidades',         regex: /velocidad|km\/h|kilómetros por hora/i },
+  { id: 'years',    label: 'Años y Plazos',        regex: /año|antigüedad|cumplir/i },
+  { id: 'distance', label: 'Distancias y Medidas', regex: /metro|centímetro|distancia|separación/i },
+]
 
 interface AppContextValue {
   questions: QuestionsMap
@@ -12,6 +18,7 @@ interface AppContextValue {
   addToRetryQueue: (ids: number[]) => void
   removeFromRetryQueue: (id: number) => void
   clearRetryQueue: () => void
+  focusCategories: FocusCategory[]
   loading: boolean
 }
 
@@ -24,6 +31,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [groupNames, setGroupNames] = useState<string[]>([])
   const [currentGroupIndex, setCurrentGroupIndex] = useState(0)
   const [loading, setLoading] = useState(true)
+  const [focusCategories, setFocusCategories] = useState<FocusCategory[]>([])
   const [retryQueue, setRetryQueue] = useState<number[]>(() =>
     JSON.parse(localStorage.getItem('retryQueue') || '[]'),
   )
@@ -49,6 +57,19 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setTests(tMap)
         setTestGroups(groups)
         setGroupNames(Object.keys(groups).sort())
+
+        const cats: FocusCategory[] = FOCUS_DEFS.map(d => ({ id: d.id, label: d.label, questionIds: [] }))
+        questionsRaw.forEach(q => {
+          const text = q.question + ' ' + q.explanation
+          for (let i = 0; i < FOCUS_DEFS.length; i++) {
+            if (FOCUS_DEFS[i].regex.test(text)) {
+              cats[i].questionIds.push(q.id)
+              break
+            }
+          }
+        })
+        setFocusCategories(cats)
+
         setLoading(false)
       })
       .catch(err => {
@@ -78,6 +99,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         questions, tests, testGroups, groupNames,
         currentGroupIndex, setCurrentGroupIndex,
         retryQueue, addToRetryQueue, removeFromRetryQueue, clearRetryQueue,
+        focusCategories,
         loading,
       }}
     >

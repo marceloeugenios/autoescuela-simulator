@@ -33,3 +33,9 @@ export interface TestResult {
   timerSeconds: number;
   testId: string;
 }
+
+export interface FocusCategory {
+  id: string;
+  label: string;
+  questionIds: number[];
+}
