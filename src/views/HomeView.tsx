@@ -30,6 +30,14 @@ export default function HomeView() {
         </div>
       )}
 
+      <div className="card" style={{ marginBottom: 16, display: 'block' }}>
+        <div className="card-content" style={{ marginBottom: 8 }}>
+          <h3>Study Audio</h3>
+          <p style={{ fontSize: 13 }}>149 questions · 1h 54min</p>
+        </div>
+        <audio controls src="/study_audio.mp3" style={{ width: '100%' }} />
+      </div>
+
       <div style={{ display: 'flex', gap: 10, marginBottom: 16 }}>
         <button className="secondary-btn" style={{ flex: 1 }} onClick={() => navigate('/questions')}>
           Question Bank
